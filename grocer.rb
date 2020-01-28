@@ -59,8 +59,8 @@ def checkout(cart, coupons)
   con_cart = consolidate_cart(cart)
   coupon_cart = apply_coupons(con_cart, coupons)
   final_cart = apply_clearance(coupon_cart)
-  index = 0
   grant_total = 0
+  index = 0
   while index < final_cart.length do
     grand_total = final_cart[index][:count] * final_cart[index][:price]
     index += 1
