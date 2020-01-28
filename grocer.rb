@@ -58,21 +58,30 @@ end
 def checkout(cart, coupons)
   total = 0
   i = 0
-
   ccart = consolidate_cart(cart)
   apply_coupons(ccart, coupons)
   apply_clearance(ccart)
-
   while i < ccart.length do
     total += items_total_cost(ccart[i])
     i += 1
   end
-
   total >= 100 ? total * (0.9) : total
 end
 
-# Don't forget, you can make methods to make your life easy!
-
 def items_total_cost(i)
   i[:count] * i[:price]
+end
+
+def checkout(cart, coupons)
+  con_cart = consolidate_cart(cart)
+  coupon_cart = apply_coupons(con_cart, coupons)
+  final_cart = apply_clearance(coupon_cart)
+  grant_total = 0
+  index = 0
+  while index < final_cart.length do
+    final = final_cart[index]
+    grand_total = final[:count] * final[:price]
+    index += 1
+  end
+  grand_total >= 100 ? grand_total * 0.9 : grand_total
 end
