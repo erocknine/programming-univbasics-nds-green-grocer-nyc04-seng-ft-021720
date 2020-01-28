@@ -37,6 +37,8 @@ def apply_coupons(cart, coupons)
       discount_item[:count] -= coupon[:num]
       item_with_coupon = {item: coupon[:item] += " W/COUPON", price: discount_price, clearance: discount_item[:clearance], count: coupon[:num]}
       cart << item_with_coupon
+    else
+      nil
     end
     index+=1
   end
