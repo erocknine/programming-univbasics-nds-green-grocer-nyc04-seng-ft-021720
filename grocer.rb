@@ -79,12 +79,9 @@ def checkout(cart, coupons)
   apply_coupons(con_cart, coupons)
   apply_clearance(con_cart)
   while index < con_cart.length do
-    grand_total += items_total_cost(con_cart[index])
+    grand_total += con_cart[index][:count] * con_cart[index][:price]
     index += 1
   end
   grand_total >= 100 ? grand_total * (0.9) : grand_total
 end
 
-def items_total_cost(i)
-  i[:count] * i[:price]
-end
