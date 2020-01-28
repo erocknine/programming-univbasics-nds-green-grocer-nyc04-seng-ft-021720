@@ -73,7 +73,7 @@ end
 # end
 
 def checkout(cart, coupons)
-  grant_total = 0
+  grand_total = 0
   index = 0
   con_cart = consolidate_cart(cart)
   apply_coupons(con_cart, coupons)
