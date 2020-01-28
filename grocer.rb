@@ -55,22 +55,22 @@ def apply_clearance(cart)
   cart
 end
 
-def checkout(cart, coupons)
-  total = 0
-  i = 0
-  ccart = consolidate_cart(cart)
-  apply_coupons(ccart, coupons)
-  apply_clearance(ccart)
-  while i < ccart.length do
-    total += items_total_cost(ccart[i])
-    i += 1
-  end
-  total >= 100 ? total * (0.9) : total
-end
+# def checkout(cart, coupons)
+#   total = 0
+#   i = 0
+#   ccart = consolidate_cart(cart)
+#   apply_coupons(ccart, coupons)
+#   apply_clearance(ccart)
+#   while i < ccart.length do
+#     total += items_total_cost(ccart[i])
+#     i += 1
+#   end
+#   total >= 100 ? total * (0.9) : total
+# end
 
-def items_total_cost(i)
-  i[:count] * i[:price]
-end
+# def items_total_cost(i)
+#   i[:count] * i[:price]
+# end
 
 def checkout(cart, coupons)
   con_cart = consolidate_cart(cart)
