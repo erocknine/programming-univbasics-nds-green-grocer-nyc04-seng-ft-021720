@@ -10,7 +10,6 @@ def find_item_by_name_in_collection(name, collection)
   nil
 end
 
-
 def consolidate_cart(cart)
   con_cart = []
   index = 0
@@ -55,7 +54,6 @@ def apply_clearance(cart)
   end
   cart
 end
-
 
 def checkout(cart, coupons)
   new_cart = consolidate_cart(cart)
