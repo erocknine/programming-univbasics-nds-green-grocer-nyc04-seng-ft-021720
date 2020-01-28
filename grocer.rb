@@ -82,7 +82,7 @@ def checkout(cart, coupons)
     grand_total += items_total_cost(con_cart[index])
     index += 1
   end
-  grand_total >= 100 ? grand_total * 0.9 : grand_total
+  grand_total >= 100 ? grand_total * (0.9) : grand_total
 end
 
 def items_total_cost(i)
