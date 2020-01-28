@@ -33,7 +33,7 @@ def apply_coupons(cart, coupons)
     coupon = coupons[index]
     discount_price = (coupon[:cost].to_f / coupon[:num].to_f).round(2)
     discount_item = find_item_by_name_in_collection(coupon[:item], cart)
-    if discount_item && (coupon[:num] <= discount_item[:count]) && coupons.length > 0
+    if discount_item && (coupon[:num] <= discount_item[:count])
       discount_item[:count] -= coupon[:num]
       item_with_coupon = {item: coupon[:item] += " W/COUPON", price: discount_price, clearance: discount_item[:clearance], count: coupon[:num]}
       cart << item_with_coupon
